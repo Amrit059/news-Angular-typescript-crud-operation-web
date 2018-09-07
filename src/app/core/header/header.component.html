@@ -1,0 +1,17 @@
+<nav>
+<span class="dropdown">
+       <ul> <i class="material-icons">menu</i>
+        <span class="dropdown-content">   
+        <a routerLink="/home"><i class="material-icons">home</i>Home</a>
+        <a routerLink="/login" *ngIf="!auth.loggedIn()"><i class="material-icons">power_settings_new</i>Login</a>
+        <a routerLink="/register"*ngIf="!auth.loggedIn()"><i class="material-icons">perm_contact_calendar</i>SignUp</a>
+        <a routerLink="/contactus" *ngIf="!auth.loggedIn()"><i class="material-icons">contact_mail</i>Contact Us</a>   
+        <a routerLink="/create" *ngIf="auth.loggedIn()"><i class="material-icons">perm_contact_calendar</i>Create News</a> 
+        <a routerLink="/detail" *ngIf="auth.loggedIn()"><i class="material-icons">perm_contact_calendar</i>News Detail</a> 
+        <a routerLink="/userdetail" *ngIf="auth.loggedIn()"><i class="material-icons">perm_contact_calendar</i>User Detail</a> 
+        <a routerLink="/login" *ngIf="auth.loggedIn()" (click)="auth.Logout()"><i class="material-icons">power_settings_new</i>Logout</a>  
+
+    </span></ul> 
+</span>
+</nav>
+<br>

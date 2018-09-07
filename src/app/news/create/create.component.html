@@ -1,0 +1,59 @@
+<div style="text-align:center; ">
+        <h1 style="color: gray;">{{t}}</h1>
+  <form (ngSubmit)="addnews(ngForm.value)" #myForm="ngForm">
+      <h3>Title</h3>
+  <mat-form-field>
+  <input name="title" matInput placeholder="Enter News Title" 
+    required
+     [(ngModel)]=" news.title" #title = "ngModel"
+    />
+             
+  </mat-form-field>
+<br>
+
+  <h3>Author Name</h3>
+  <mat-form-field>
+     
+      <input name="author" 
+      matInput 
+      [ngModel]="author.value|titlecase"
+      placeholder="Please Enter Author Name" 
+      [(ngModel)]=" news.author"
+      required
+      author
+      #author="ngModel"
+      />
+  </mat-form-field>
+<br>
+<h3>Discription</h3>
+<mat-form-field>
+   
+    <input name="discription" 
+    matInput
+    [ngModel]="discription.value|titlecase" 
+    placeholder="Please Enter Discription" 
+    [(ngModel)]=" news.discription"
+    required
+    discription
+    #discription="ngModel"
+    />
+</mat-form-field> 
+<br>
+<h3>Catagories</h3>
+<mat-form-field>
+    <input name="catagories" 
+    matInput 
+   
+    placeholder="Please Enter Catagories" 
+    [(ngModel)]=" news.catagories"
+    required
+    catagories
+    #catagories="ngModel"
+    />
+</mat-form-field>
+<br>
+    <button  mat-raised-button  [disabled]="myForm.invalid" type="submit" color="primary">Create</button> 
+    <button mat-raised-button (click)="resetForm(myForm)" color="warn">Reset Form</button> 
+  </form>
+ 
+</div>

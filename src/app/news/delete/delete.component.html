@@ -1,0 +1,21 @@
+<h1 style="color: gray; text-align: center;">{{title}}</h1>
+
+<table class="table" border="1">
+  <tr>
+   <th>Unique Id</th>
+   <th>NEWS Title</th>
+   <th>Author Name</th>
+   <th>Catagory</th>
+   
+  </tr> 
+  <tr >
+   <td >{{news._id}}</td>    
+   <td >{{news.author}}</td>
+   <td >{{news.catagories}}</td>
+   <td >{{news.title}}</td>
+   </tr>
+   </table>
+   <br>
+   <button  mat-raised-button color="warn" (click)="delete(news._id)">DELETE</button>
+   <button  mat-raised-button color="primary" routerLink="/detail">Cancel</button>
+  

@@ -1,0 +1,58 @@
+<div style="text-align:center; ">
+    <h1 style="color: gray;">{{title}}</h1>
+<form (ngSubmit)="updateNews(news.id)" #myForm="ngForm">
+  <h3>Title</h3>
+<mat-form-field>
+<input name="title"
+ matInput
+ placeholder="Enter News Title" 
+ required
+ [(ngModel)]=" news.title" ngModel #emailId = "ngModel"
+/>
+         
+</mat-form-field>
+<br>
+
+<h3>Author Name</h3>
+<mat-form-field>
+ 
+  <input name="author" 
+  matInput 
+  placeholder="Please Enter Author Name" 
+  [(ngModel)]=" news.author"
+  ngModel
+  required
+  author
+  #author="ngModel"
+  />
+</mat-form-field>
+<br>
+<h3>Discription</h3>
+<mat-form-field>
+<input name="discription"
+  matInput
+  placeholder="Please Enter Discription" 
+  [(ngModel)]=" news.discription"
+  required
+  ngModel 
+  #discription="ngModel" />
+</mat-form-field> 
+<br>
+<h3>Catagories</h3>
+<mat-form-field>
+<input name="catagories"
+ matInput 
+ placeholder="Please Enter Catagories"
+ [(ngModel)]=" news.catagories"
+ required
+ ngModel
+ catagories 
+ #catagories="ngModel"
+/>
+</mat-form-field>
+<br>
+<button [disabled]="myForm.invalid" mat-raised-button  type="submit" color="primary">Update</button> 
+<button mat-raised-button (click)="resetForm(myForm)" color="warn">Reset Form</button> 
+<button  mat-raised-button color="primary" routerLink="/detail">Cancel</button>
+</form>
+</div>

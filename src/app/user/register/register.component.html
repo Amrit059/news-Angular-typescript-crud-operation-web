@@ -1,0 +1,64 @@
+
+<div style="text-align:center; ">
+    <h1 style="color: gray;">{{title}}</h1>
+    <br>
+  <form (ngSubmit)="registerUser()" #myForm="ngForm">
+      <h3>Email ID</h3>
+  <mat-form-field>
+  <input name="emailId" matInput placeholder="Enter email id" 
+    required
+    email
+     [(ngModel)]=" registerUserData.email" #emailId = "ngModel"
+    />
+    <mat-error *ngIf="emailId.errors?.required">Email id is required.</mat-error>            
+    <mat-error *ngIf="!emailId.errors?.required &&
+     emailId.errors?.email">Email id is not valid.</mat-error>            
+  </mat-form-field>
+<br>
+
+  <h3>Password</h3>
+  <mat-form-field>
+     
+      <input name="password" 
+      matInput 
+      type="password"
+      placeholder="Please enter password" 
+      [(ngModel)]=" registerUserData.password"
+      required
+      #password="ngModel"
+      />
+    <mat-error *ngIf="password.invalid">Password is required.</mat-error>      
+  </mat-form-field>
+<br>
+<h3>Username</h3>
+<mat-form-field>
+   
+    <input name="username" 
+    matInput 
+    type="text"
+    placeholder="Please enter username" 
+    [(ngModel)]=" registerUserData.username"
+    required
+    #username="ngModel"
+    />
+  <mat-error *ngIf="username.invalid">Password is required.</mat-error>      
+</mat-form-field>
+<br>
+<h3>Mobile no</h3>
+<mat-form-field>
+   
+    <input name="mobileno" 
+    matInput 
+    type="number"
+    placeholder="Please enter Mobileno" 
+    [(ngModel)]=" registerUserData.mobileno"
+    required
+    #mobileno="ngModel"
+    />
+  <mat-error *ngIf="mobileno.invalid">Password is required.</mat-error>      
+</mat-form-field>
+<br>
+    <button [disabled]="myForm.invalid" mat-raised-button  type="submit"color="primary">SignUp</button> 
+    <button mat-raised-button (click)="resetForm(myForm)" color="warn">Reset Form</button> 
+  </form>
+</div>

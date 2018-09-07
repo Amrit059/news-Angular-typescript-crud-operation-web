@@ -1,0 +1,50 @@
+<div ><img src="assets/img/yes.gif" height="700px" width="1335px"/>
+<router-outlet></router-outlet>
+  <table  class="table" >
+      <tr  class="table">
+       <th>Sports</th>
+       <th>Culture</th>
+       <th>Weather</th>
+      </tr> 
+      <tr class="table" >
+          <td [routerLink]="['/catagories/Sports' ]"><a>
+         <img src="../assets/cat/Athletes.jpg" height="300"width="400"/></a></td>    
+         <td [routerLink]="['/catagories/Culture']"><a>
+        <img src="../assets/cat/Culture.jpg" height="300"width="400"/></a></td>
+      <td [routerLink]="['/catagories/Weather']"><a> 
+        <img src="../assets/cat/Weather.jpg" height="300"width="400"></a></td>
+      </tr>
+     </table>
+     <table class="table" >
+        <tr class="table" >
+         <th>Entertainment</th>
+         <th>Music</th>
+         <th>Nature</th>
+        </tr> 
+        <tr>
+            <td [routerLink]="['/catagories/Movies']"><a>
+            <img src="../assets/cat/Movies.jpg" height="300"width="400"/></a></td>    
+            <td [routerLink]="['/catagories/Nature']"><a>
+          <img src="../assets/cat/Nature.jpg" height="300"width="400"/></a></td>
+          <td [routerLink]="['/catagories/Music']"><a>
+          <img src="../assets/cat/Music.jpg" height="300"width="400"/></a></td>
+        </tr>
+      </table>  
+      <table class="table" >
+          <tr>
+           <th>Journey</th>
+           <th>Food</th>
+           <th>Offers</th>
+          </tr> 
+          <tr>
+              <td [routerLink]="['/catagories/Travel' ]"><a>
+            <img src="../assets/cat/Travel1.jpg" height="300"width="400"/></a></td>    
+            <td [routerLink]="['/catagories/Food']"><a>
+            <img src="../assets/cat/Food.jpg" height="300"width="400"/></a></td>
+            <td [routerLink]="['/catagories/Sales']"><a>
+            <img src="../assets/cat/sales.jpg" height="300"width="400"/></a></td>
+          </tr>
+        </table>    
+<br>
+<router-outlet></router-outlet>
+</div>

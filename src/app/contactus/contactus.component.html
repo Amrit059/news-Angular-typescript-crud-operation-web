@@ -1,0 +1,87 @@
+
+<h1  style="color: gray; text-align:center;">{{title}}</h1>
+<!--<div style="text-align:center; ">
+    
+    <form (ngSubmit)="infoUser()" #myForm="ngForm">
+        <h3>Name</h3>
+        <mat-form-field>
+           
+            <input name="name" 
+            matInput
+            placeholder="Enter Your Full Name" 
+            [(ngModel)]=" query.name"
+            required
+            #name="ngModel"
+            />
+          </mat-form-field>
+      <br>
+  
+      <h3>Email ID</h3>
+    <mat-form-field>
+  
+      <input name="emailId" matInput placeholder="Enter email id" 
+      required
+      email
+       [(ngModel)]=" query.email" #emailId = "ngModel"
+      />
+      <mat-error *ngIf="emailId.errors?.required">Email id is required.</mat-error>            
+      <mat-error *ngIf="!emailId.errors?.required &&
+       emailId.errors?.email">Email id is not valid.</mat-error>            
+    </mat-form-field>
+  <br>
+  
+    <h3>Message</h3>
+    <mat-form-field>
+       
+        <input name="message" 
+        matInput
+        placeholder="Enter Your Message" 
+        [(ngModel)]=" query.message"
+        required
+        #message="ngModel"
+        />    
+    </mat-form-field>
+  <br>
+  
+  
+      <button [disabled]="myForm.invalid" mat-raised-button  type="submit"color="primary">Send</button> 
+      <button mat-raised-button (click)="resetForm(myForm)" color="warn">Reset Form</button> 
+    </form>
+  </div>-->
+
+
+
+
+
+  <div style="text-align:center;">
+    <form [formGroup]="contactUSForm" (ngSubmit)="submit(contactUSForm.value)">
+  <div formGroupName="uData">
+     <h3>Name</h3>
+    <mat-form-field >
+     <input matInput type="text" name="username"
+     placeholder="Enter your username" formControlName="username" >
+    </mat-form-field><br>
+    <h3>EmailId</h3>
+    <mat-form-field >
+     <input matInput type="text" name="emailId"
+     placeholder="Enter your EmailId" formControlName="emailId" >
+    </mat-form-field><br>
+    <h3>Message</h3>
+     <mat-form-field>   
+     <input matInput type="text" name="message"
+     placeholder="Enter the message here" formControlName="message">
+    </mat-form-field></div>
+      <h3>Gender</h3>
+     <div  *ngFor="let g of gender ">
+       <input type="radio" name="gender"
+       formControlName="gender" [value]="g">{{g}}
+     </div><br>
+     <div formArrayName="hobby" >
+        <h3>Hobbies</h3>
+     <button mat-raised-button color="primary" type="button" (click)="addhobby()">Add Hobby</button>  <br>
+     <div *ngFor="let hobbyControl of contactUSForm.get('hobby').controls;let i=index">
+       <input type="text"name="hobby" [formControlName]="i">
+     </div></div><br>
+       <button  mat-raised-button color="primary"  [disabled]="contactUSForm.invalid" type="submit">Submit</button>
+    </form>
+  </div> 

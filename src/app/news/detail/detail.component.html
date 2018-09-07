@@ -1,0 +1,22 @@
+<h1 style="color: gray; text-align: center;">{{title}}</h1>
+<table class="table" border="1">
+  <tr>
+   <th>Unique Id</th>
+   <th>NEWS Title</th>
+   <th>Author Name</th>
+   <th>Catagory</th>
+   <th></th>
+   <th></th>
+  </tr> 
+  <tr *ngFor="let n of news">
+     <td >{{n._id}}</td>    
+   <td >{{n.title}}</td>
+   <td >{{n.author}}</td>
+   <td >{{n.catagories}}</td>
+ <!--   <td ><a (click)="delete(n._id)" style=" color:red">Delete</a></td>-->
+   <td><button  mat-raised-button color="primary" [routerLink]="['/update', n._id]">
+    <a >update</a></button></td>
+  <td><button  mat-raised-button color="warn" [routerLink]="['/delete', n._id]"><a>Delete</a></button></td>
+  </tr>
+ </table>
+ 

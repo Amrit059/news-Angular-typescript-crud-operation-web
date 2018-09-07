@@ -1,0 +1,16 @@
+<h1 style="color: gray; text-align: center;">{{title}}</h1>
+<table class="table" border="1">
+ <tr>
+  <th>Unique Id</th>
+  <th>Email Addresses</th>
+  <th>User Name</th>
+  <th>Contact no</th>
+ </tr> 
+ <tr *ngFor="let user of users">
+    <td >{{user._id}}</td>    
+  <td >{{user.email}}</td>
+  <td >{{user.username}}</td>
+  <td >{{user.mobileno}}</td>
+
+ </tr>
+</table>

@@ -1,0 +1,42 @@
+
+<router-outlet></router-outlet>
+<div style="text-align: center;">
+    <h1 style="color: gray;">{{title}}</h1>
+    <br>
+  <form (ngSubmit)="loginUser()" #myForm="ngForm">
+      <h3>Email ID</h3>
+  <mat-form-field>
+      <input name="emailId" matInput placeholder="Enter email id" 
+    required
+    email
+    [(ngModel)]="loginUserData.email"
+    #emailId = "ngModel"
+    />
+    <mat-error *ngIf="emailId.errors?.required">Email id is required.</mat-error>            
+    <mat-error *ngIf="!emailId.errors?.required && emailId.errors?.email">Email id is not valid.</mat-error>            
+  </mat-form-field>
+<br>
+<h3>Password</h3>
+  <mat-form-field>
+      
+      <input name="password" 
+      matInput 
+      placeholder="Please enter password" 
+      [(ngModel)]="loginUserData.password"
+      required
+      #password="ngModel"
+      type="password"
+      />
+    <mat-error *ngIf="password.invalid">Password is required.</mat-error>      
+  </mat-form-field>
+  <br>
+    
+
+    <button [disabled]="myForm.invalid" mat-raised-button 
+    color="primary"type="submit">Login</button> 
+    <button mat-raised-button (click)="resetForm(myForm)"
+     color="warn">Reset Form</button> 
+  </form>
+<label>Create a new account</label>
+<a routerLink="/register"> Sigup</a>
+</div>
